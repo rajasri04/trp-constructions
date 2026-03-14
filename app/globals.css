@@ -1,0 +1,267 @@
+:root {
+  --bg: #080f1f;
+  --surface: #121d33;
+  --surface-2: #0d1629;
+  --text: #eaf2ff;
+  --muted: #a3b6d6;
+  --primary: #3ad1ff;
+  --primary-2: #6578ff;
+  --stroke: #27375d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top right, #1b2d60 0%, var(--bg) 48%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin-inline: auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(100, 122, 175, 0.35);
+  background: rgba(7, 11, 24, 0.72);
+}
+
+.navWrap {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.navWrap nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.navWrap nav a {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.navWrap .phone {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--stroke);
+  border-radius: 0.7rem;
+  font-size: 0.88rem;
+}
+
+.pageHero {
+  padding: 5.5rem 0 3.25rem;
+}
+
+.pageHero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.08;
+}
+
+.pageHero p {
+  margin-top: 0.85rem;
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.section {
+  padding: 1.8rem 0 2.2rem;
+}
+
+.introCard,
+.card,
+.stat {
+  background: linear-gradient(150deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--stroke);
+  border-radius: 1rem;
+}
+
+.introCard {
+  padding: 1.4rem;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.76rem 1rem;
+  border-radius: 0.65rem;
+  border: 1px solid #455886;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text);
+}
+
+.btn.primary {
+  border: none;
+  color: #081127;
+  background: linear-gradient(100deg, var(--primary) 0%, var(--primary-2) 100%);
+}
+
+.compactGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stat {
+  padding: 1rem;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.stat p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  padding: 1.2rem;
+}
+
+.card h3,
+.card h2 {
+  margin-top: 0;
+}
+
+.card p,
+.prose p,
+.prose li,
+.role,
+.testimonial cite {
+  color: var(--muted);
+}
+
+.role {
+  margin-top: -0.4rem;
+}
+
+.prose ul {
+  padding-left: 1.2rem;
+}
+
+.contactForm {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contactForm input,
+.contactForm select,
+.contactForm textarea {
+  width: 100%;
+  border: 1px solid #3b4d7c;
+  background: #0a1428;
+  color: var(--text);
+  border-radius: 0.6rem;
+  padding: 0.72rem 0.8rem;
+}
+
+.twoCol {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer {
+  margin-top: 3rem;
+  border-top: 1px solid #24345d;
+  background: #070f1f;
+  padding-top: 2rem;
+}
+
+.footerGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+}
+
+.footer h4 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.footer p,
+.brandList {
+  color: var(--muted);
+}
+
+.brandList {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.copyright {
+  margin: 0;
+  text-align: center;
+  padding: 1.1rem 0 1.4rem;
+  color: #8ea2cc;
+  border-top: 1px solid #1b2a4f;
+  margin-top: 1rem;
+}
+
+@media (max-width: 980px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .compactGrid,
+  .footerGrid,
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+
+  .navWrap nav {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pageHero {
+    padding-top: 4.4rem;
+  }
+}
